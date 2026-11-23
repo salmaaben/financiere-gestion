@@ -1,9 +1,11 @@
 FROM php:8.3-apache
 
-# Installation des extensions PHP nécessaires à Laravel et SQL
+# Installation des dépendances système et extensions PHP nécessaires à Laravel, SQL et GD
 RUN apt-get update && apt-get install -y \
     git unzip libpq-dev libzip-dev zip \
-    && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip \
+    libpng-dev libjpeg-dev libfreetype6-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) pdo pdo_mysql pdo_pgsql zip gd \
     && rm -rf /var/lib/apt/lists/*
 
 # Activation de mod_rewrite d'Apache
