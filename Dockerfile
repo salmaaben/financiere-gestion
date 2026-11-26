@@ -17,6 +17,7 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-av
 
 # Écoute sur le port 8080 (accessible à www-data) et envoi des logs vers stdout/stderr
 RUN sed -ri -e 's/Listen 80/Listen 8080/g' /etc/apache2/ports.conf \
+RUN grep -rnE "Listen 80|:80>" /etc/apache2/ports.conf /etc/apache2/sites-available/ || true
     && sed -ri -e 's/:80>/:8080>/g' /etc/apache2/sites-available/*.conf \
     && sed -ri -e 's!ErrorLog .*!ErrorLog /dev/stderr!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf \
     && sed -ri -e 's!CustomLog .*!CustomLog /dev/stdout combined!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
