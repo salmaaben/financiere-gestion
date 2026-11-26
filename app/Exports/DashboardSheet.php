@@ -235,7 +235,6 @@ $this->totalTresorerie = $this->caisse + $this->banque;
                 // Formatage des montants du résumé (Ligne 6)
                 $sheet->getStyle('A5:E5')->getBorders()->getBottom()->setBorderStyle('thin');
                 $sheet->getStyle('A6:E6')->getNumberFormat()->setFormatCode('#,##0.00 "MAD"');
-
                 $sheet->getStyle('A6')->getFont()->setBold(true)->getColor()->setRGB('38761D');
                 $sheet->getStyle('B6')->getFont()->setBold(true)->getColor()->setRGB('C00060');
                 $sheet->getStyle('C6')->getFont()->setBold(true)->getColor()->setRGB($this->solde >= 0 ? '38761D' : 'C00060');
