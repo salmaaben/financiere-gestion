@@ -1,0 +1,76 @@
+/* Logo */
+.brand-link{
+    height: 75px;
+    display:flex;
+    align-items:center;
+    padding:10px 15px;
+}
+
+.brand-image{
+    position: static !important;
+    width: 55px !important;
+    height: 55px !important;
+    margin-right: 12px !important;
+    object-fit: contain;
+
+}
+
+.brand-text{
+    color:#fff !important;
+    font-size:22px;
+    font-weight:600;
+}
+.nav-sidebar .nav-link{
+    color: #E9ECEF !important;
+}
+
+.brand-text{
+    color: #FFFFFF !important;
+}
+
+
+.main-sidebar{
+    background-color: 
+    
+    #130fffc0 !important;
+}
+.nav-sidebar .nav-link.active{
+    background:#ffffff !important;
+    border-radius:8px;
+}
+
+.nav-sidebar .nav-link{
+    color:
+   #ffffff  !important;
+}
+
+.brand-text{
+    color:#FFFFFF !important;
+}
+/* Couleur des éléments du menu */
+.nav-sidebar .nav-link {
+    color: #ffffff 
+}
+
+/* Couleur des icônes */
+.nav-sidebar .nav-link i {
+    color:#ffffff ;
+}
+
+/* Au survol */
+.nav-sidebar .nav-link:hover {
+    color:#ffffff !important;
+}
+
+/* Élément actif */
+.nav-sidebar .nav-link.active {
+    color: #FFFFFF !important;      /* Texte blanc */
+    background-color:#ffffff !important;
+}
+
+.nav-sidebar .nav-link.active i {
+    color: #FFFFFF !important;
+}
+.brand-text {
+    color: #ffffff 
+}
