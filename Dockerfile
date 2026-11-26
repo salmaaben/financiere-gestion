@@ -38,8 +38,9 @@ COPY routes ./routes
 COPY artisan ./artisan
 
 # Permissions Laravel et exécution des scripts post-install
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 storage bootstrap/cache
+RUN mkdir -p /var/www/html/storage/framework/{sessions,views,cache} /var/www/html/storage/logs /var/www/html/bootstrap/cache \
+    && chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Script de démarrage (migrations + lancement Apache)
 COPY start.sh /start.sh
